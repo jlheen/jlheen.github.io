@@ -1,0 +1,36 @@
+<style>
+    /* Stackoverflow preview fix, please ignore */
+    /* source code: https://stackoverflow.com/questions/40178386/bootstrap-4-navbar-items-on-right-side */
+    .navbar-nav {
+      flex-direction: row;
+    }
+    
+    .nav-link {
+      padding-right: .5rem !important;
+      padding-left: .5rem !important;
+    }
+    
+    /* Fixes dropdown menus placed on the right side */
+    .ml-auto .dropdown-menu {
+      left: auto !important;
+      right: 0px;
+    }
+
+    a, a:hover {
+      text-decoration: none;
+      color: black;
+  }
+  
+  img {
+    /* 
+      Center a block element in the middle of its enclosing tag.
+      When you use the "auto" rule on both left and right margins, 
+      your browser will do the math necessary to center a block element.
+      */
+    margin-left: auto;
+    margin-right: auto;
+    /* Block display (more on this later) */
+    display: block;
+  }
+
+  </style>

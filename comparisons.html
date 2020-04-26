@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Comparisons Preview</title>
+  </head>
+  <body>
+    <!-- Navigation Pane -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary rounded">
+        <a class="navbar-brand" href="index.html">Home</a>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="comparisons.html">Comparisons</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Plots
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="viz_1.html">Viz 1</a>
+              <a class="dropdown-item" href="viz_2.html">Viz 2</a>
+              <a class="dropdown-item" href="viz_3.html">Viz 3</a>
+              <a class="dropdown-item" href="viz_4.html">Viz 4</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="data.html">Data</a>
+          </li>
+          </li>
+        </ul>
+      </nav>
+    
+<!-- Comparion of Graphs -->
+<!-- Page's Title -->
+    <div class="container">
+        <div class="jumbotron">
+          <h2 class="font-weight-bold">Comparison: Latitude v. X</h2>
+          <h4>
+            How did we create these visuals and what do they mean?
+          </h4>
+          <p>
+            You can read more about how the data was generated in the "Data" page, but once it was collected and in a dataframe, these plots were generated through Python's Matplotlib library. Our first big question is answered in the "Latitude v. Max Temperature" graph: if a city is closer to the equator, then is it's max temperature higher? Looking closely for the x = 0 indicator (in this and all our graphs, the equator), will show most of the highest temperatures, which then fall on either side as the city's latitudes increase and their distance from the equator grows. So, in short: yes. What do our other graphs tell us? Click on each one for a more in-depth analysis. And what do all the graphs combined show? When only given latitude and these measurements, there is little else that is conclusive with a randomly generated set of coordinates. Temperature is closely correlated with latitude, but humidity, cloudiness, and wind speed show much more variability. Wind speed, perhaps, shows that few cities get recorded wind speeds higher than 25 miles per hour. As a group, these visuals indicate that a closer analysis of the dataset and an incorporation of other pertinent information is needed to investigate causation for observed patterns. For example, a question for further analysis would be: what are the cities that measured over 25 mph wind speed? Were there any similarities in other recorded measurements that might nod to some cause for the high winds? For now, we will only wonder, but feel free to click on each image to find out more about what we do know.
+          </p>
+        </div>
+    </div>
+
+<!-- Responsive Data Graph Images -->
+    <div class="container" style="padding-bottom: 30px">
+<!-- Row 1 -->
+    <div class="row">
+      <div class="col-md-6">
+        <div class="rounded float-left">
+          <a href="viz_1.html">
+          <p class="font-weight-bold">Latitude v. Max Temperature</p>
+          <img src="Resources/assets/images/Fig1.png" class="img-fluid" alt="Responsive image" style="width:100%">
+          </a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="rounded float-right">
+          <a href="viz_2.html">
+          <p class="font-weight-bold">Latitude v. Humidity</p>
+          <img src="Resources/assets/images/Fig2.png" class="img-fluid" alt="Responsive image" style="width:100%">
+          </a>
+        </div>
+      </div>
+    </div>
+
+<!-- Row 2 -->
+    <div class="row">
+      <div class="col-md-6">
+        <div class="rounded float-left">
+          <a href="viz_3.html">
+          <p class="font-weight-bold">Latitude v. Cloudiness</p>
+          <img src="Resources/assets/images/Fig3.png" class="img-fluid" alt="Responsive image" style="width:100%">
+          </a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="rounded float-right">
+          <a href="viz_4.html">
+          <p class="font-weight-bold">Latitude v. Wind Speed</p>
+          <img src="Resources/assets/images/Fig4.png" class="img-fluid" alt="Responsive image" style="width:100%">
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>

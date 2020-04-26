@@ -1,2 +1,2 @@
-# jlheen.github.io
-GitHut Pages website for displaying programming projects.
+# Get to Know Me
+Repository for portfolio and resume site for J.L. Heen.
