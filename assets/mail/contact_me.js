@@ -17,17 +17,37 @@ $(function() {
       if (firstName.indexOf(' ') >= 0) {
         firstName = name.split(' ').slice(0, -1).join(' ');
       }
-      $this = $("#sendMessageButton");
-      $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
-      $.ajax({
-        url: "contact_me.php",
-        type: "POST",
-        data: {
-          name: name,
-          phone: phone,
-          email: email,
-          message: message
-        },
+      // $this = $("#sendMessageButton");
+      // $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
+      // $.ajax({
+      //   url: "contact_me.php",
+      //   type: "POST",
+        
+// $('#myForm').on('submit', function(event) {
+//   event.preventDefault(); // prevent reload
+  
+//   var formData = new FormData(this);
+//   formData.append('service_id', 'jheen');
+//   formData.append('template_id', 'jodilynnheen@gmail.com');
+//   formData.append('user_id', 'jheen');
+
+  $.ajax('https://api.emailjs.com/api/v1.0/email/send-form', {
+      type: 'POST',
+      data: {
+        name: name,
+        phone: phone,
+        email: email,
+        message: message
+      },
+      contentType: false, // auto-detection
+      processData: false // no need to parse formData to string
+    }).done(function() {
+        alert('Your mail is sent!');
+    }).fail(function(error) {
+        alert('Oops... ' + JSON.stringify(error));
+    });
+    });
+
         cache: false,
         success: function() {
           // Success message
@@ -69,22 +89,3 @@ $(function() {
   });
 });
 
-$('#myForm').on('submit', function(event) {
-  event.preventDefault(); // prevent reload
-  
-  var formData = new FormData(this);
-  formData.append('service_id', 'jheen');
-  formData.append('template_id', 'jodilynnheen@gmail.com');
-  formData.append('user_id', 'jheen');
-
-  $.ajax('https://api.emailjs.com/api/v1.0/email/send-form', {
-      type: 'POST',
-      data: formData,
-      contentType: false, // auto-detection
-      processData: false // no need to parse formData to string
-  }).done(function() {
-      alert('Your mail is sent!');
-  }).fail(function(error) {
-      alert('Oops... ' + JSON.stringify(error));
-  });
-});
