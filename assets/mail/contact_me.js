@@ -19,8 +19,7 @@ $(function() {
       }
       $this = $("#sendMessageButton");
       $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
-      // $.ajax
-      $emailjs.sendForm('jheen'{
+      $.ajax({
         url: "contact_me.php",
         type: "POST",
         data: {
@@ -70,13 +69,22 @@ $(function() {
   });
 });
 
-/*When clicking on Full hide fail/success boxes */
-// $('#name').focus(function() {
-//   $('#success').html('');
-// });
-// emailjs.sendForm('jheen', 'contact_me.js', '#myForm')
-//     .then(function(response) {
-//        console.log('SUCCESS!', response.status, response.text);
-//     }, function(error) {
-//        console.log('FAILED...', error);
-//     });
+$('#myForm').on('submit', function(event) {
+  event.preventDefault(); // prevent reload
+  
+  var formData = new FormData(this);
+  formData.append('service_id', 'jheen');
+  formData.append('template_id', 'jodilynnheen@gmail.com');
+  formData.append('user_id', 'jheen');
+
+  $.ajax('https://api.emailjs.com/api/v1.0/email/send-form', {
+      type: 'POST',
+      data: formData,
+      contentType: false, // auto-detection
+      processData: false // no need to parse formData to string
+  }).done(function() {
+      alert('Your mail is sent!');
+  }).fail(function(error) {
+      alert('Oops... ' + JSON.stringify(error));
+  });
+});
