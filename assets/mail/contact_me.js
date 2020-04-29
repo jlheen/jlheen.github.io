@@ -19,7 +19,8 @@ $(function() {
       }
       $this = $("#sendMessageButton");
       $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
-      $.ajax({
+      // $.ajax
+      $emailjs.sendForm('jheen'{
         url: "contact_me.php",
         type: "POST",
         data: {
@@ -70,6 +71,12 @@ $(function() {
 });
 
 /*When clicking on Full hide fail/success boxes */
-$('#name').focus(function() {
-  $('#success').html('');
-});
+// $('#name').focus(function() {
+//   $('#success').html('');
+// });
+// emailjs.sendForm('jheen', 'contact_me.js', '#myForm')
+//     .then(function(response) {
+//        console.log('SUCCESS!', response.status, response.text);
+//     }, function(error) {
+//        console.log('FAILED...', error);
+//     });
